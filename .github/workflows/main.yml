@@ -1,0 +1,15 @@
+name: test_read_file_schedule
+on:
+  push:
+  schedule:
+    - cron: '*/2 * 14-15 6 2024'
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: read-file
+        run: |
+          echo "hello "+date > file
+          git 
