@@ -2,13 +2,13 @@ name: timezone right
 
 on:
   schedule:
-    - cron: '35 4 18 * *'
+    - cron: '17 5 18 * *'
 
 jobs:
   timezone_date:
     runs-on: [ubuntu-latest]
     steps:
-      - name: set timezone
-        run: TZ="Europe/Berlin"
+      # - name: set timezone
+        # run: TZ="Europe/Berlin"
       - name: show date
         run: date +%F_%H:%M
