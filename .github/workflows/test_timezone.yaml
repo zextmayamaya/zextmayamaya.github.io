@@ -1,4 +1,5 @@
-name: timezone right
+# 测试每天能否定时执行任务
+name: everyday-morning-greet
 
 on:
   schedule:
