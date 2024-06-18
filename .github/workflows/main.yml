@@ -16,5 +16,8 @@ jobs:
       - name: pull files
         run: |
           git pull
-          ls -lh
-
+          node app.js
+          git add .
+          git commit -m "update index.html"
+          git status
+          git push origin develop
