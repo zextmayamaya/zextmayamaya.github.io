@@ -15,7 +15,9 @@ jobs:
         uses: actions/setup-node@v4
       - name: shell create file
         run: |
-          cat everydayRecite.csv | grep $(date --date="1day" +%F) | cut -d ',' -f 3 > tomorrow
+          day=$(date --date="1day" +%F)
+          content=$(cat everydayRecite.csv | grep ${day} | cut -d ',' -f 3)
+          cat template.html | sed -e "12c $day" | sed -e "15c $content" > index.html
           pwd;ls -lh
       - name: pull files
         run: |
