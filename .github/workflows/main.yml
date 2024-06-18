@@ -1,7 +1,7 @@
 name: everyday-recite
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 #  schedule:
 #    - cron: '0 16 * * *'
 
