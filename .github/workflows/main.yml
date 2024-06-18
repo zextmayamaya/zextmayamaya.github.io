@@ -20,6 +20,8 @@ jobs:
           pwd;ls -lh
       - name: pull files
         run: |
+          git config --global user.email "mayamaya@live.cn"
+          git config --global user.name "zextmayamaya"
           git add .
           git commit -m "update index.html"
           git status
