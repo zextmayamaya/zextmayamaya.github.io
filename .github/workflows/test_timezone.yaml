@@ -2,13 +2,14 @@ name: timezone right
 
 on:
   schedule:
-    - cron: '17 5 18 * *'
+    - cron: '10 0 * * *'
+  workflow_dispatch:
 
 jobs:
   timezone_date:
     runs-on: [ubuntu-latest]
     steps:
-      # - name: set timezone
-        # run: TZ="Europe/Berlin"
+      - name: everyday morning greet
+        run: echo "hello everyday 8:10"
       - name: show date
         run: date +%F_%H:%M
