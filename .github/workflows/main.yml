@@ -13,6 +13,8 @@ jobs:
         uses: actions/checkout@v4
       - name: node.js
         uses: actions/setup-node@v4
-      - name: test
-        run: node -v
+      - name: pull files
+        run: |
+          git pull git@github.com:zextmayamaya/zextmayamaya.github.io.git
+          ls -lh
 
