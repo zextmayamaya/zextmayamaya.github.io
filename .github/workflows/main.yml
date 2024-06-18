@@ -13,6 +13,10 @@ jobs:
         uses: actions/checkout@v4
       - name: node.js
         uses: actions/setup-node@v4
+      - name: shell create file
+        run: |
+          cat everydayRecite.csv | grep $(date --date="1day" +%F) | cut -d ',' -f 3 > tomorrow
+          pwd;ls -lh
       - name: pull files
         run: |
           npm i --no-fund
