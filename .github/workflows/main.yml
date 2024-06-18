@@ -15,6 +15,6 @@ jobs:
         uses: actions/setup-node@v4
       - name: pull files
         run: |
-          git pull git@github.com:zextmayamaya/zextmayamaya.github.io.git
+          git pull
           ls -lh
 
