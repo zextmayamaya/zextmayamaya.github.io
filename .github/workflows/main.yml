@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-#      - name: node.js
-#        uses: actions/setup-node@v4
       - name: shell create file
         run: |
           git pull
@@ -22,9 +20,6 @@ jobs:
           pwd;ls -lh
       - name: pull files
         run: |
-#          npm i --no-fund
-#          git pull
-#          node app.js
           git add .
           git commit -m "update index.html"
           git status
