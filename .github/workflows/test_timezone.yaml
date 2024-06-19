@@ -6,6 +6,7 @@ on:
 
 env:
   username: "zextmayamaya"
+  
 jobs:
   test_env:
     runs-on: [ubuntu-latest]
@@ -14,6 +15,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: show env
-        run: $username
+        run: env
       - name: show date
         run: date +%F_%H:%M
