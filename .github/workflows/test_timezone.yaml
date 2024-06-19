@@ -9,7 +9,10 @@ env:
 jobs:
   test_env:
     runs-on: [ubuntu-latest]
+    
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
       - name: show env
         run: $username
       - name: show date
