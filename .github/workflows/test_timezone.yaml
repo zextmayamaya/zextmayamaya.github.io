@@ -1,16 +1,16 @@
 # 测试每天能否定时执行任务
-name: everyday-morning-greet
+name: test
 
 on:
-  schedule:
-    - cron: '10 0 * * *'
   workflow_dispatch:
 
+env:
+  username: "zextmayamaya"
 jobs:
   timezone_date:
     runs-on: [ubuntu-latest]
     steps:
-      - name: everyday morning greet
-        run: echo "hello everyday 8:10"
+      - name: show env
+        run: $username
       - name: show date
         run: date +%F_%H:%M
