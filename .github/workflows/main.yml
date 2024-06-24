@@ -35,4 +35,4 @@ jobs:
           git add .
           git commit -m "update index.html"
           git status
-          git push origin develop
+          git push origin develop -f
