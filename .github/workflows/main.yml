@@ -18,10 +18,13 @@ jobs:
           content=$(cat everydayRecite.csv | grep ${day} | cut -d ',' -f 3)
           dayNoSort=$(date +%-m月%-d日 -d "1day")
           contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4}')
+          cat template.html | sed -e "12c $day" | sed -e "15c $content" | sed -e "21c $dayNoSort" |
+          sed -e "24c $contentNoSort" > index.html
+      - name: add schedule B
+        run: |
           daySort=$(date --date="1day" +%Y/%m/%d)
           contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
-          cat template.html | sed -e "12c $day" | sed -e "15c $content" | sed -e "21c $dayNoSort" |
-          sed -e "24c $contentNoSort" | sed -e "30c $daySort" | sed -e "33c $ContentSort" > index.html
+          cat index.html | sed -e "30c $daySort" | sed -e "33c $ContentSort" > index.html
       - name: pull files
         run: |
           git config --global user.email "mayamaya@live.cn"
