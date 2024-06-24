@@ -20,11 +20,14 @@ jobs:
           contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4}')
           cat template.html | sed -e "12c $day" | sed -e "15c $content" | sed -e "21c $dayNoSort" |
           sed -e "24c $contentNoSort" > index.html
-      - name: add schedule B
-        run: |
-          daySort=$(date --date="1day" +%Y/%m/%d)
-          contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
-          cat index.html | sed -e "30c $daySort" | sed -e "33c $contentSort" > index.html
+#      - name: add schedule B
+#        run: |
+#          daySort=$(date --date="1day" +%Y/%m/%d)
+#          echo $daySort
+#          contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
+#          echo $contentSort
+          #cat index.html | sed -e "30c $daySort" | sed -e "33c $contentSort" > index.html
+#          cat index.html 
       - name: pull files
         run: |
           git config --global user.email "mayamaya@live.cn"
