@@ -24,14 +24,13 @@ jobs:
         run: |
           daySort=$(date --date="1day" +%Y/%-m/%-d)
           contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
-          cat -n index.html
           cat index.html | sed -e "30c $daySort" | sed -e "33c $contentSort" > index1.html
           rm index.html
           mv index1.html index.html
           echo 'DATE=$(cat index.html | sed -n "30p")' >> $GITHUB_ENV
           echo 'CURRENT=$(date --date="1day" +%Y/%-m/%-d)' >> $GITHUB_ENV
       - name: pull files
-        if: env.DATE == env.CURRENT
+        if: [ env.DATE = env.CURRENT ]
         run: echo "ok"
 #        run: |
 #          git config --global user.email "mayamaya@live.cn"
