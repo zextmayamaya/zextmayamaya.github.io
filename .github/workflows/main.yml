@@ -29,8 +29,9 @@ jobs:
           rm index.html
           mv index1.html index.html
           echo 'DATE=$(cat index.html | sed -n "30p")' >> $GITHUB_ENV
+          echo 'CURRENT=$(date --date="1day" +%Y/%-m/%-d)' >> $GITHUB_ENV
       - name: pull files
-        if: env.DATE == $(date --date="1day" +%Y/%-m/%-d)
+        if: env.DATE == env.CURRENT
         run: echo "ok"
 #        run: |
 #          git config --global user.email "mayamaya@live.cn"
