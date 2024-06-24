@@ -3,7 +3,7 @@ name: everyday-recite
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 10,16 * * *'
 
 jobs:
   create_html:
