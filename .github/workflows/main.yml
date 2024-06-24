@@ -24,7 +24,7 @@ jobs:
         run: |
           daySort=$(date --date="1day" +%Y/%m/%d)
           contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
-          cat index.html | sed -e "30c $daySort" | sed -e "33c $ContentSort" > index.html
+          cat index.html | sed -e "30c $daySort" | sed -e "33c $contentSort" > index.html
       - name: pull files
         run: |
           git config --global user.email "mayamaya@live.cn"
