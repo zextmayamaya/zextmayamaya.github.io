@@ -23,11 +23,15 @@ jobs:
           sed -e "24c $contentNoSort" > index.html
       - name: add schedule B
         run: |
-          daySort=$(date --date="1day" +%Y/%-m/%-d)
+          daySort=$(date -d "1day" +%Y/%-m/%-d)
           contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
-          cat index.html | sed -e "30c ${daySort}" | sed -e "33c ${contentSort}" > index1.html
-          rm index.html
-          mv index1.html index.html
+          echo ${contentSort}
+#        run: |
+#          daySort=$(date --date="1day" +%Y/%-m/%-d)
+#          contentSort=$(cat readSort | grep ${daySort} | cut -d ',' -f 2)
+#          cat index.html | sed -e "30c ${daySort}" | sed -e "33c ${contentSort}" > index1.html
+#          rm index.html
+#          mv index1.html index.html
       - name: pull files
         run: |
           git config --global user.email "mayamaya@live.cn"
