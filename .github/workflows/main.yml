@@ -1,10 +1,10 @@
 name: everyday-recite
 
 on:
-#  push:
-  workflow_dispatch:
+  push:
+#  workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 10,16 * * *'
 
 jobs:
   create_html:
