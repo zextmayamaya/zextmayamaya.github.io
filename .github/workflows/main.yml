@@ -1,7 +1,6 @@
 name: everyday-recite
 
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron: '0 10,16 * * *'
@@ -34,7 +33,7 @@ jobs:
         run: |
           git config --global user.email "mayamaya@live.cn"
           git config --global user.name "zextmayamaya"
-          git add .
+          git add -A
           git commit -m "update index.html"
           git status
           git push origin develop -f
