@@ -2,7 +2,7 @@ name: everyday-recite
 
 on:
   push:
-#  workflow_dispatch:
+  workflow_dispatch:
   schedule:
     - cron: '0 10,16 * * *'
 
