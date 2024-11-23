@@ -3,53 +3,104 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>计划</title>
+	<title>全年背/读计划</title>
 </head>
 <body>
-	<div>
-		<h1 class="selected">背诵计划</h1>
-		<p>
-			
-		</p>
-		<p>背诵:
-			
-		</p>
+	<div class="container">
+		<h2 class="header">背诵计划</h2>
+		<div class="content">
+			<p>
+背诵时间
+			</p>
+			<p>背诵：
+背诵内容
+			</p>
+				
+		</div>
 	</div>
-	<div>
-		<h1>新旧约对应阅读</h1>
-		<p>
 
-		</p>
-		<p>读:
-
-		</p>
+	<div class="container">
+		<h2 class="header">新旧约对应阅读计划</h2>
+		<div class="content">
+			<p>
+阅读时间
+			</p>
+			<p>阅读：
+新旧约对应阅读计划内容
+			</p>
+		</div>
 	</div>
-	<div>
-		<h1 class="selected">按圣经目录顺序阅读</h1>
-		<p>
-
-		</p>
-		<p>读:
-
-		</p>
+				
+	<div class="container">
+		<h2 class="header">按圣经目录顺序阅读</h2>
+		<div class="content">
+			<p>
+阅读时间
+			</p>
+			<p>阅读：
+按圣经目录顺序阅读计划内容
+			</p>
+		</div>
 	</div>
-	
+
 	<style>
-		h1,p{	text-align: center;}
-		h1{	color: yellow;}
-		div{
-			min-width: 10em;
-			max-width: 30em;	
-			margin: 1em;
-			background-color: yellowgreen;	
-			padding: 10px 20px;	
-			font-size: 1.5em;
-			float: left;
+		*, html, body{
+			margin: 0;
+			padding: 0;
 		}
-		.selected{
-			background-color: #1083b0;
+		body{
+			width: 100vw;
+			height: 100vh;
+			background-color: #777;
+		}
+		.container{
+			display: block;
+			width: 490px;
+			margin: 10px auto;
+			font-size: 18px;
+		}
+		.header, .content{
+			text-align: center;
+			background-color: #59afa6;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			color: #fff;
+			padding-top: 20px;
+		}
+		.header{
+			display: block;
+			border-bottom: 1px dashed lightgrey;
+			min-height: 50px;
+			border-radius: 10px;
+		}
+		.content{
+			display: none;
+			min-height: 100px;
 		}
 	</style>
+	<script>
+		window.addEventListener('load', function () {
+			// 加载页面后运行
+			const boxes = document.querySelectorAll('.container');
 
+			boxes.forEach(box => {
+				const h = box.querySelector('.header');
+				const div = box.querySelector('.content');
+
+				h.addEventListener('click', () => {
+					const hided = div.style.display === 'none';
+					div.style.display = hided ? 'block' : 'none';
+
+					if ( !hided ) {
+						h.style.borderRadius = '10px';
+					} else {
+						h.style.borderRadius = '10px 10px 0 0';
+						div.style.borderRadius = '0 0 10px 10px';
+					}
+				})
+			})
+		})
+
+	</script>
 </body>
 </html>
