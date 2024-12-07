@@ -10,10 +10,10 @@
 		<h2 class="header">背诵计划</h2>
 		<div class="content">
 			<p>
-2024-12-07
+2024-12-08
 			</p>
 			<p>背诵：
-"以弗所书 5章33节"
+"歌罗西书 3章18-19节"
 			</p>
 				
 		</div>
@@ -23,10 +23,10 @@
 		<h2 class="header">新旧约对应阅读计划</h2>
 		<div class="content">
 			<p>
-12月7日
+12月8日
 			</p>
 			<p>阅读：
-摩 4-6章 
+摩 7-9章 
 			</p>
 		</div>
 	</div>
@@ -35,13 +35,16 @@
 		<h2 class="header">按圣经目录顺序阅读</h2>
 		<div class="content">
 			<p>
-2024/12/7
+2024/12/8
 			</p>
 			<p>阅读：
-提前4-6章
+提后1-4章
 			</p>
 		</div>
 	</div>
+
+	<button class="button" onclick="showContent()">缩写对照表</button>
+	<div class="pic"><img src="image/shortName.jpg" alt="缩写对照表"></div>
 
 	<style>
 		*, html, body{
@@ -79,6 +82,31 @@
 			color: #fffa80;
 			font-size: 22px;
 		}
+		.button{
+			border: none;
+			width: 80px;
+			height: 40px;
+			background-color: yellow;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			z-index: 10;
+		}
+		.pic{
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			display: none;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5);
+			text-align: center;
+			overflow-y: scroll;
+		}
+		.pic img{
+			max-width: 388px;
+		}
 	</style>
 	<script>
 		window.addEventListener('load', function () {
@@ -101,7 +129,17 @@
 					}
 				})
 			})
+
 		})
+		function showContent(){
+			const pic = document.querySelector('.pic')
+			if(pic.style.display === 'block'){
+				pic.style.display = 'none';
+			} else {
+				pic.style.display = 'block';
+			}
+		}
+
 
 	</script>
 </body>
