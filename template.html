@@ -43,6 +43,9 @@
 		</div>
 	</div>
 
+	<button class="button" onclick="showContent()">缩写对照表</button>
+	<div class="pic"><img src="image/shortName.jpg" alt="缩写对照表"></div>
+
 	<style>
 		*, html, body{
 			margin: 0;
@@ -79,6 +82,31 @@
 			color: #fffa80;
 			font-size: 22px;
 		}
+		.button{
+			border: none;
+			width: 80px;
+			height: 40px;
+			background-color: yellow;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			z-index: 10;
+		}
+		.pic{
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			display: none;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5);
+			text-align: center;
+			overflow-y: scroll;
+		}
+		.pic img{
+			max-width: 388px;
+		}
 	</style>
 	<script>
 		window.addEventListener('load', function () {
@@ -101,7 +129,17 @@
 					}
 				})
 			})
+
 		})
+		function showContent(){
+			const pic = document.querySelector('.pic')
+			if(pic.style.display === 'block'){
+				pic.style.display = 'none';
+			} else {
+				pic.style.display = 'block';
+			}
+		}
+
 
 	</script>
 </body>
