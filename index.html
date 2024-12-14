@@ -234,6 +234,7 @@
 			const boxes = document.querySelectorAll('.container');
 			const audio = document.querySelector('.song')
 			audio.volume = 0.3
+			audio.paused = false
 			audio.play()
 
 			boxes.forEach(box => {
