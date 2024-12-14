@@ -42,6 +42,9 @@
 			</p>
 		</div>
 	</div>
+	<audio autoplay loop controls class="song">
+		<source src="music/worship.mp3" type="audio/mpeg" />
+	</audio>
 
 	<button class="button" onclick="showContent()">缩写对照表</button>
 	<div class="tableContainer">
@@ -218,11 +221,19 @@
 			color: white;
 			font-size: 26px;
 		}
+		.song{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100vw;
+		}
 	</style>
 	<script>
 		window.addEventListener('load', function () {
 			// 加载页面后运行
 			const boxes = document.querySelectorAll('.container');
+			const audio = document.querySelector('.song')
+			audio.volume = 0.3
 
 			boxes.forEach(box => {
 				const h = box.querySelector('.header');
