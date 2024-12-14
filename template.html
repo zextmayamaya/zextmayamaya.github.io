@@ -42,7 +42,7 @@
 			</p>
 		</div>
 	</div>
-	<audio autoplay loop controls class="song">
+	<audio loop controls class="song">
 		<source src="music/worship.mp3" type="audio/mpeg" />
 	</audio>
 
@@ -234,6 +234,7 @@
 			const boxes = document.querySelectorAll('.container');
 			const audio = document.querySelector('.song')
 			audio.volume = 0.3
+			audio.play()
 
 			boxes.forEach(box => {
 				const h = box.querySelector('.header');
