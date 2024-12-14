@@ -10,10 +10,10 @@
 		<h2 class="header">背诵计划</h2>
 		<div class="content">
 			<p>
-2024-12-14
+2024-12-15
 			</p>
 			<p>背诵：
-"马太福音 5章23-24节"
+"路加福音 22章25-26节"
 			</p>
 				
 		</div>
@@ -23,10 +23,10 @@
 		<h2 class="header">新旧约对应阅读计划</h2>
 		<div class="content">
 			<p>
-12月14日
+12月15日
 			</p>
 			<p>阅读：
-番 1-3章 
+该 1-2章 
 			</p>
 		</div>
 	</div>
@@ -35,13 +35,16 @@
 		<h2 class="header">按圣经目录顺序阅读</h2>
 		<div class="content">
 			<p>
-2024/12/14
+2024/12/15
 			</p>
 			<p>阅读：
-来10-13章
+雅1-3章
 			</p>
 		</div>
 	</div>
+	<audio autoplay loop controls class="song">
+		<source src="music/worship.mp3" type="audio/mpeg" />
+	</audio>
 
 	<button class="button" onclick="showContent()">缩写对照表</button>
 	<div class="tableContainer">
@@ -218,11 +221,19 @@
 			color: white;
 			font-size: 26px;
 		}
+		.song{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100vw;
+		}
 	</style>
 	<script>
 		window.addEventListener('load', function () {
 			// 加载页面后运行
 			const boxes = document.querySelectorAll('.container');
+			const audio = document.querySelector('.song')
+			audio.volume = 0.3
 
 			boxes.forEach(box => {
 				const h = box.querySelector('.header');
