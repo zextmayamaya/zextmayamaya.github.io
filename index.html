@@ -10,10 +10,10 @@
 		<h2 class="header">背诵计划</h2>
 		<div class="content">
 			<p>
-2024-12-21
+2024-12-22
 			</p>
 			<p>背诵：
-"罗马书 14章1-3节"
+"罗马书 14章14节"
 			</p>
 				
 		</div>
@@ -23,10 +23,10 @@
 		<h2 class="header">新旧约对应阅读计划</h2>
 		<div class="content">
 			<p>
-12月21日
+12月22日
 			</p>
 			<p>阅读：
-玛 1-4章 
+启 1-5章 
 			</p>
 		</div>
 	</div>
@@ -35,42 +35,43 @@
 		<h2 class="header">按圣经目录顺序阅读</h2>
 		<div class="content">
 			<p>
-2024/12/21
+2024/12/22
 			</p>
 			<p>阅读：
-约-4-5章
+约二/约三/犹
 			</p>
 		</div>
 	</div>
-<details><summary>歌词</summary>
-Your face is beautiful And Your eyes are like the stars Your gentle hands have healing There inside the scars Your loving arms they draw me near And Your smile it brings me peace Draw me closer oh my Lord Draw me closer Lord to Thee <br>
+	<details class="lyric">
+		<summary>歌词</summary>
+		Your face is beautiful And Your eyes are like the stars Your gentle hands have healing There inside the scars Your loving arms they draw me near And Your smile it brings me peace Draw me closer oh my Lord Draw me closer Lord to Thee <br>
 
-Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
+		Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
 
-And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You <br>
+		And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You <br>
 
-Your voice is powerful And Your words are radiant bright In Your breath and shadow I will come close and abide <br>
+		Your voice is powerful And Your words are radiant bright In Your breath and shadow I will come close and abide <br>
 
-You whisper love and life divine And Your fellowship is free Draw me closer, oh my Lord Draw me closer Lord to Thee <br>
+		You whisper love and life divine And Your fellowship is free Draw me closer, oh my Lord Draw me closer Lord to Thee <br>
 
-Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
+		Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
 
-And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You <br>
+		And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You <br>
 
-And let everything be lost in the shadows Of the light of Your face <br>
+		And let everything be lost in the shadows Of the light of Your face <br>
 
-And let every chain be broken from me As I'm bound in Your grace <br>
+		And let every chain be broken from me As I'm bound in Your grace <br>
 
-For Your yoke is easy, Your burden is light You're full of wisdom, power and might <br>
+		For Your yoke is easy, Your burden is light You're full of wisdom, power and might <br>
 
-And every eye will see You <br>
+		And every eye will see You <br>
 
-Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
+		Captivate us, Lord Jesus Set our eyes on You Devastate us with Your presence Falling down <br>
 
-And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You Captivate us Lord Jesus, with You <br>
+		And rushing river, draw us nearer Holy fountain consume us with You Captivate us Lord Jesus, with You Captivate us Lord Jesus, with You <br>
 
-Captivate us
-</details>
+		Captivate us
+	</details>
 	<audio loop controls class="song">
 		<source src="music/worship.mp3" type="audio/mpeg" />
 	</audio>
@@ -251,10 +252,29 @@ Captivate us
 			font-size: 26px;
 		}
 		.song{
+/*			display: none;*/
 			position: fixed;
 			bottom: 0;
 			left: 0;
 			width: 100vw;
+			height: 40px;
+		}
+		.lyric{
+			background-color: rgba(255, 255, 255, 1);
+			color: darkgreen;
+			display: block;
+			max-height: 400px;
+			position: fixed;
+			bottom: 40px;
+			line-height:30px;
+			z-index: 25;
+			overflow-y: scroll;
+		}
+		.lyric summary{
+			line-height:20px;
+			width: 60px;
+			height: 20px;
+			color: black;
 		}
 	</style>
 	<script>
