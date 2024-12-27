@@ -10,7 +10,7 @@ env:
 
 jobs:
   create_html:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: checkout
         uses: actions/checkout@v4
