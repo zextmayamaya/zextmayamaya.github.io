@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 16 * * *'
 
+env:
+  ACTIONS_STEP_DEBUG: true
+
 jobs:
   create_html:
     runs-on: ubuntu-latest
