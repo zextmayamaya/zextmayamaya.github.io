@@ -22,7 +22,7 @@ jobs:
           content=$(cat everydayRecite.csv | grep ${day} | cut -d ',' -f 3)
           echo "${day} ${content} recite done" > checkError
           dayNoSort=$(date +%-m月%-d日 -d "1day")
-          contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4}')
+          contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4} $2=="任务完成" {print $2$3}')
           echo "${dayNoSort} ${contentNoSort} nosort done" >> checkError
           cat template.html | sed -e "13c ${day}" | sed -e "16c ${content}" | sed -e "26c ${dayNoSort}" | sed -e "29c ${contentNoSort}" > index.html
           echo "任务一完成" >> checkError
