@@ -24,7 +24,7 @@ jobs:
           dayNoSort=$(date +%-m月%-d日 -d "1day")
           contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4}')
           echo -e "$dayNoSort $contentNoSort\n$(date)" >> checkError
-          cat template.html | sed -e "13c $day" | sed -e "16c $content" | sed -e "26c $dayNoSort" | sed -e "29c $contentNoSort" > index.html
+          cat template.html | sed -e "13c ${day}" | sed -e "16c ${content}" | sed -e "26c ${dayNoSort}" | sed -e "29c ${contentNoSort}" > index.html
           echo -e "任务一完成\n" >> checkError
         continue-on-error: true
       - name: add schedule B
