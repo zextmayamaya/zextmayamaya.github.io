@@ -3,14 +3,15 @@ name: everyday-recite
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '40 15 * * *'
 
-env:
-  ACTIONS_STEP_DEBUG: true
+#env:
+#  ACTIONS_STEP_DEBUG: true
 
 jobs:
   create_html:
     runs-on: ubuntu-22.04
+#    continue-on-error: true
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -23,9 +24,9 @@ jobs:
           dayNoSort=$(date +%-m月%-d日 -d "1day")
           contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4}')
           echo -e "$dayNoSort $contentNoSort\n$(date)" >> checkError
-          cat template.html | sed -e "13c $day" | sed -e "16c $content" | sed -e "26c $dayNoSort" |
-          sed -e "29c $contentNoSort" > index.html
+          cat template.html | sed -e "13c $day" | sed -e "16c $content" | sed -e "26c $dayNoSort" | sed -e "29c $contentNoSort" > index.html
           echo -e "任务一完成\n" >> checkError
+        continue-on-error: true
       - name: add schedule B
         run: |
           daySort=$(date -d "1day" +%Y/%-m/%-d)
@@ -39,7 +40,7 @@ jobs:
         run: |
           git config --global user.email "mayamaya@live.cn"
           git config --global user.name "zextmayamaya"
-          git add -A
+          git add .
           git commit -m "update index.html"
           git status
-          git push origin develop -f
+          git push origin develop 
