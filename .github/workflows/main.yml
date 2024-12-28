@@ -36,6 +36,7 @@ jobs:
           rm index.html
           mv index1.html index.html
           echo -e "任务二完成\n" >> checkError
+          rm -f checkError
       - name: pull files
         run: |
           git config --global user.email "mayamaya@live.cn"
