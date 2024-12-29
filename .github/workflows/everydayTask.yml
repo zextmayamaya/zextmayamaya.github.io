@@ -28,14 +28,13 @@ jobs:
           echo $?
           sed -e "38c ${date_uni}" 1.html | sed -e "41c ${content_readS}" > 2.html
           echo $?
-          sed -e "13c ${date_uni}" 2.html | sed -e "16c ${content_recite}" > index.html
+          sed -e "13c ${date_uni}" 2.html | sed -e "16c ${content_recite}" > test.html
           echo $?
         continue-on-error: true
 
       - name: delete_temp_file
         run: |
           rm -f {1..2}.html
-          mv index.html test.html
 
       - name: push_to_repository
         run: |
