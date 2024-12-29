@@ -30,6 +30,7 @@ jobs:
           echo $?
           sed -e "13c ${date_uni}" 2.html | sed -e "16c ${content_recite}" > index.html
           echo $?
+        continue-on-error: true
 
       - name: delete_temp_file
         run: |
