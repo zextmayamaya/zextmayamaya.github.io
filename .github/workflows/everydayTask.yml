@@ -39,6 +39,8 @@ jobs:
 
       - name: push_to_repository
         run: |
+          git config --global user.name "zextmayamaya"
+          git config --global user.email "mayamaya@live.cn"
           git add .
           git commit -m "update ${date_uni} content"
           git push origin develop
