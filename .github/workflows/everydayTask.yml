@@ -27,7 +27,7 @@ jobs:
           sed -e "26c ${date_uni}" template.html | sed -e "29c ${content_readNS}" > 1.html
           sed -e "38c ${date_uni}" 1.html | sed -e "41c ${content_readS}" > 2.html
           sed -e "13c ${date_uni}" 2.html | sed -e "16c ${content_recite}" > test.html
-#        continue-on-error: true
+        continue-on-error: true
 
       - name: delete_temp_file
         run: |
