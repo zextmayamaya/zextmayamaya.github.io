@@ -29,9 +29,9 @@ jobs:
           sed -e "13c ${date_uni}" 2.html | sed -e "16c ${content_recite}" > test.html
         continue-on-error: true
 
-      - name: delete_temp_file
-        run: |
-          rm -f {1..2}.html
+#      - name: delete_temp_file
+#        run: |
+#          rm -f {1..2}.html
 
       - name: push_to_repository
         run: |
