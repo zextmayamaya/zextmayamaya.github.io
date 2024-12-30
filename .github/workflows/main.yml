@@ -24,9 +24,9 @@ jobs:
           dayNoSort=$(date +%-m月%-d日 -d "1day")
           contentNoSort=$(cat readNotSort | grep ${dayNoSort} | awk -F, '$2!="任务完成" {print $2" "$3"章 "$4} $2=="任务完成" {print $2$3}')
           echo "${dayNoSort} ${contentNoSort} nosort done" >> checkError
-          if [ ${content} == "" ] || [ ${contentNoSort} == "" ]; then
-            content=contentNoSort="找不到指定的日期"
-          fi
+#          if [ ${content} == "" ] || [ ${contentNoSort} == "" ]; then
+#            content=contentNoSort="找不到指定的日期"
+#          fi
           cat template.html | sed -e "13c ${day}" | sed -e "16c ${content}" | sed -e "26c ${dayNoSort}" | sed -e "29c ${contentNoSort}" > index.html
           echo "任务一完成" >> checkError
         continue-on-error: true
