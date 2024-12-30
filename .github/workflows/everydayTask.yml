@@ -16,7 +16,7 @@ jobs:
       - name: define_variable
         run: |
           git pull origin develop
-          date_uni=$(date -d '1day' +%Y-%m-%d)
+          date_uni=$(date -d '3day' +%Y-%m-%d)
           content_recite=$(cat 2025schedule/everydayRecite.csv | grep ${date_uni} | awk -F, '{print $3}')
           content_readNS=$(cat 2025schedule/readNotSort.csv | grep ${date_uni} | sed -e 's/`//g' | awk -F, '$2!="完成" {print $2$3"章"$4} $2=="完成" {print $2$3" "$4}')
           content_readS=$(cat 2025schedule/readSort.csv | grep ${date_uni} | awk -F, '{print $2}')
