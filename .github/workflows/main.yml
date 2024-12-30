@@ -31,6 +31,9 @@ jobs:
         run: |
           daySort=$(date -d "1day" +%Y/%-m/%-d)
           contentSort=$(cat readSort | grep "${daySort}," | cut -d ',' -f 2)
+          if [$contentSort -eq ""];then
+            contentSort="完成了"
+          fi
           echo "${daySort} ${contentSort} sort done" >> checkError
           cat index.html | sed -e "38c ${daySort}" | sed -e "41c ${contentSort}" > index1.html
           rm index.html
