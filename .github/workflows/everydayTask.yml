@@ -2,8 +2,8 @@ name: 2025 everyday read and recite
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - scron: '40 15 * * *'
+  schedule:
+    - scron: '40 15 * * *'
 
 jobs:
   create_html:
@@ -13,7 +13,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: define_variable
+      - name: define_variable_update_index
         run: |
           git pull origin develop
           date_uni=$(date -d '1day' +%Y-%m-%d)
