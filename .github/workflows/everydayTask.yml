@@ -3,7 +3,7 @@ name: 2025 everyday read and recite
 on:
   workflow_dispatch:
   schedule:
-    - scron: '40 15 * * *'
+    - cron: '40 15 * * *'
 
 jobs:
   create_html:
