@@ -21,13 +21,13 @@ jobs:
           content_readNS=$(cat 2025schedule/readNotSort.csv | grep ${date_uni} | sed -e 's/`//g' | awk -F, '$2!="完成" {print $2$3"章"$4} $2=="完成" {print $2$3" "$4}')
           content_readS=$(cat 2025schedule/readSort.csv | grep ${date_uni} | awk -F, '{print $2}')
           echo "${date_uni} ${content_recite} ${content_readNS} ${content_readS}" > checkerror.txt
-          if ${content_recite}; then
+          if ${content_recite} -eq ""; then
             content_recite='暂时没有信息'
           fi
-          if ${content_readNS}; then
+          if ${content_readNS} -eq ""; then
             content_readNS='暂时没有信息'
           fi
-          if ${content_readS}; then
+          if ${content_readS} -eq ""; then
             content_readS='当前时间可能不是2025年'
           fi
           cat template.html | sed "26c ${date_uni}" | sed "29c ${content_readNS}" > 1.html
