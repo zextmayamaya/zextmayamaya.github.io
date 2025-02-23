@@ -303,7 +303,7 @@
 			boxes.forEach(box => {
 				const h = box.querySelector('.header');
 				const div = box.querySelector('.content');
-				console.log(h)
+				div.style.display = 'none'
 				h.addEventListener('click', (e) => {
 					e.preventDefault()
 					const hided = div.style.display === 'none';
